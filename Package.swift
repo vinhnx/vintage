@@ -14,11 +14,10 @@ let package = Package(
         .package(url: "git@github.com:JohnSundell/Files.git", from: "3.0.0"),
         .package(url: "git@github.com:JohnSundell/Releases.git", from: "2.0.0"),
         .package(url: "git@github.com:kylef/Commander.git", from: "0.8.0"),
-        .package(url: "https://github.com/mxcl/Chalk.git", from: "0.1.0"),
-        .package(url: "https://github.com/kiliankoe/CLISpinner", from: "0.3.6")
+        .package(url: "https://github.com/mxcl/Chalk.git", from: "0.1.0")
     ],
     targets: [
-        .target(name: "package_outdated_core", dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk", "CLISpinner"], path: "Sources/package_outdated_core"),
+        .target(name: "package_outdated_core", dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk"], path: "Sources/package_outdated_core"),
         .target(name: "package_outdated", dependencies: ["package_outdated_core"]),
     ]
 )

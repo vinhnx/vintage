@@ -9,7 +9,6 @@ import Foundation
 import Files
 import Chalk
 import Releases
-import CLISpinner
 
 // MARK: - Public
 
@@ -66,12 +65,9 @@ func findVersionTagForPackage(_ packageURL: String, path: String) throws -> Stri
 func parse(_ substring: Substring, path: String) {
     do {
         let url = substring.gitURL
-        let spinner = Spinner(pattern: .dots)
-        spinner.start()
         let releases = try Releases.versions(for: url)
         let localVersion = try findVersionTagForPackage(substring.toString, path: path).toVersion
         outputPrint(url: url, releases: releases, localVersion: localVersion)
-        spinner.succeed()
     } catch {
         print(CommandError.rawError(error, #line))
     }
