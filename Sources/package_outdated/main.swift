@@ -5,7 +5,7 @@ import Rainbow
 import Releases
 import Sweep
 
-#warning("TODO: check TODO.md in root folder for TODOs")
+// NOTE: check TODO.md in root folder for TODOs
 
 /**
  Package Model
@@ -53,7 +53,6 @@ extension String {
         do {
             return try Version(string: self)
         } catch {
-            print(CommandError.rawError(error))
             return nil
         }
     }
@@ -133,7 +132,7 @@ extension URL {
         do {
             return try Releases.versions(for: self)
         } catch {
-            print(CommandError.rawError(error))
+            print(CommandError.rawError(error, #line))
             return []
         }
     }
@@ -154,7 +153,7 @@ enum CommandError: Error, CustomStringConvertible {
     case noMatchedPackageRepositoryURLFound
     case noPackageManifestFileFound(String)
     case invalidURL(URL)
-    case rawError(Error)
+    case rawError(Error, Int)
 }
 
 extension CommandError {
@@ -170,8 +169,8 @@ extension CommandError {
             return "No package manifest file found in current path: `\(path)`. Try running with `-p` option, example: `package_outdated run -p Dependencies`"
         case .invalidURL(let url):
             return "URL is not a valid URL. Expected: https, git. Got: \(url.scheme ?? "")"
-        case .rawError(let error):
-            return error.localizedDescription
+        case .rawError(let error, let line):
+            return "[Error line #\(line)] \(error.localizedDescription)"
         }
     }
 
@@ -239,7 +238,7 @@ func parse(_ substring: Substring, path: String) {
         let localVersion = try findVersionTagForPackage(substring.toString, path: path).toVersion
         outputPrint(url: url, releases: releases, localVersion: localVersion)
     } catch {
-        print(CommandError.rawError(error))
+        print(CommandError.rawError(error, #line))
     }
 }
 
@@ -260,19 +259,15 @@ func colorCode(lhs: Version, rhs: Version) -> Color {
 ///   - releases: released versions
 ///   - localVersion: local version
 func outputPrint(url: URL, releases: [Version], localVersion: Version?) {
-    #warning("""
-    TODO: resolve error when localVersion is not found:
-    ❗️ The operation couldn’t be completed. (Releases.Releases.Error error 2.), please try again.
-    📦 checking https://github.com/apple/swift-log.git...
-    """)
-
     print("📦 checking " + "\(url.absoluteString)...".applyingCodes(Style.bold))
-
-    guard let localVersion = localVersion else { return }
     guard let latestVersion = (releases.last?.string ?? "").toVersion else { return }
 
-    let color = colorCode(lhs: localVersion, rhs: latestVersion)
-    print("> 🏷  local version: \(localVersion)".applyingColor(color))
+    var color: Color = .default
+    localVersion.flatMap { local in
+        color = colorCode(lhs: local, rhs: latestVersion)
+        print("> 🏷  local version: \(local)".applyingColor(color))
+    }
+
     print("> ☁️  latest version: \(latestVersion)".applyingColor(color))
 }
 
