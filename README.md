@@ -6,6 +6,10 @@
 
 A small CLI tool to check project's Swift Package Manager dependencies' local version with remote latest version. 
 
+![screenshot](screenshots/run_demo.png)
+
+## Goals
+
 Like Cocoapods's `pod outdated` or Carthage's `carthage outdated`, but for Swift Package Manager.
 
 Currently, it will just output local dependency version and compare with latest git remote version. 
@@ -42,19 +46,19 @@ $ mint install vinhnx/package_outdated
 
 ## Usage
 
-Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located).
+Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
 package_outdated run
 ```
 
-Specifies path of Swift Package Manager directory to update.
+Specifies path of Swift Package Manager directory to update:
 
 ```bash
 package_outdated run -p Dependencies
 ```
 
-Help page
+Help page:
 
 ```bash
 package_outdated --help
@@ -66,6 +70,8 @@ Commands:
 
     + run - Check project's Package dependencies' local version with remote latest version.
 ```
+
+Run with option:
 
 ```bash
 package_outdated run --help
