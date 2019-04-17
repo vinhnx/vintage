@@ -20,7 +20,7 @@ Using **Make** (recommended):
 
 ```bash
 $ git clone https://github.com/vinhnx/package_outdated.git
-$ cd package_outdate
+$ cd package_outdated
 $ make
 ```
 
@@ -28,10 +28,10 @@ Using the **Swift Package Manager**:
 
 ```bash
 $ git clone https://github.com/vinhnx/package_outdated.git
-$ cd package_outdate
+$ cd package_outdated
 $ swift build -c release -Xswiftc -static-stdlib
-$ cp -f .build/release/package_outdate /usr/local/bin/package_outdate
-```
+$ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
+ ```
 
 Using **[Mint](https://github.com/yonaskolb/mint)**:
 
