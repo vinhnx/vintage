@@ -5,6 +5,8 @@ import Rainbow
 import Releases
 import Sweep
 
+#warning("TODO: check TODO.md in root folder for TODOs")
+
 /**
  Package Model
  */
@@ -165,7 +167,7 @@ extension CommandError {
         case .noMatchedPackageRepositoryURLFound:
             return "No matched package repository URL found"
         case .noPackageManifestFileFound(let path):
-            return "No package manifest file found in current path: `\(path)`"
+            return "No package manifest file found in current path: `\(path)`. Try running with `-p` option, example: `package_outdated run -p Dependencies`"
         case .invalidURL(let url):
             return "URL is not a valid URL. Expected: https, git. Got: \(url.scheme ?? "")"
         case .rawError(let error):
@@ -258,6 +260,12 @@ func colorCode(lhs: Version, rhs: Version) -> Color {
 ///   - releases: released versions
 ///   - localVersion: local version
 func outputPrint(url: URL, releases: [Version], localVersion: Version?) {
+    #warning("""
+    TODO: resolve error when localVersion is not found:
+    ❗️ The operation couldn’t be completed. (Releases.Releases.Error error 2.), please try again.
+    📦 checking https://github.com/apple/swift-log.git...
+    """)
+
     print("📦 checking " + "\(url.absoluteString)...".applyingCodes(Style.bold))
 
     guard let localVersion = localVersion else { return }
