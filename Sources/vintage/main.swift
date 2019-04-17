@@ -1,5 +1,5 @@
 import Commander
-import package_outdated_core
+import vintage_core
 
 // NOTE: check TODO.md in root folder for TODOs
 

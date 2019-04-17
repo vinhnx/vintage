@@ -4,10 +4,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "package_outdated",
+    name: "vintage",
     products: [
-        .executable(name: "vintage", targets: ["package_outdated"]),
-        .library(name: "package_outdated_core", targets: ["package_outdated_core"])
+        .executable(name: "vintage", targets: ["vintage"]),
+        .library(name: "vintage_core", targets: ["vintage_core"])
     ],
     dependencies: [
         .package(url: "git@github.com:JohnSundell/Sweep.git", from: "0.1.0"),
@@ -17,7 +17,7 @@ let package = Package(
         .package(url: "https://github.com/mxcl/Chalk.git", from: "0.1.0")
     ],
     targets: [
-        .target(name: "package_outdated_core", dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk"], path: "Sources/package_outdated_core"),
-        .target(name: "package_outdated", dependencies: ["package_outdated_core"]),
+        .target(name: "vintage_core", dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk"], path: "Sources/vintage_core"),
+        .target(name: "vintage", dependencies: ["vintage_core"]),
     ]
 )

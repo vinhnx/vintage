@@ -9,7 +9,7 @@ build:
 
 install_bin:
 	mkdir -p $(PREFIX)/bin
-	mv .build/Release/package_outdated .build/Release/$(INSTALL_NAME)
+	mv .build/Release/vintage .build/Release/$(INSTALL_NAME)
 	install .build/Release/$(INSTALL_NAME) $(PREFIX)/bin
 
 uninstall:
