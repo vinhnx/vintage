@@ -6,7 +6,6 @@
  + read `swift package update` manual
 
 ### TODO
- + modularize
  + check carthage logic https://github.com/Carthage/Carthage/blob/master/Source/carthage/Outdated.swift
  + write tests
  + documents
@@ -17,6 +16,7 @@
  + [plan] choose a better name
  
  ### Done
+ + [done] modularize
  + [done] mint/brew/installation publish
  + [done] using Files and Sweep, https://github.com/JohnSundell/Releases
  + [done] plan: color output
