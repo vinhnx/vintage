@@ -1,10 +1,10 @@
-# package_outdated
+# vintage
 
 [![Swift 5.0](https://img.shields.io/badge/swift-5.0-orange.svg)](#)
 [![Swift Package Manager](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager)
 [![@vinhnx](https://img.shields.io/badge/contact-%40vinhnx-blue.svg)](https://twitter.com/vinhnx)
 
-A small CLI tool to check project's Swift Package Manager dependencies' local version with remote latest version. 
+**vintage** is a small command-line utility to check project's Swift Package Manager dependencies' local version with remote latest version. 
 
 ![screenshot](screenshots/run_demo.png)
 
@@ -25,65 +25,65 @@ This meant for personal educational purpose as I'm learning to write Swift scrip
 Using **Make** (recommended):
 
 ```bash
-$ git clone https://github.com/vinhnx/package_outdated.git
-$ cd package_outdated
+$ git clone https://github.com/vinhnx/vintage.git
+$ cd vintage
 $ make
 ```
 
 Using the **Swift Package Manager**:
 
 ```bash
-$ git clone https://github.com/vinhnx/package_outdated.git
-$ cd package_outdated
+$ git clone https://github.com/vinhnx/vintage.git
+$ cd vintage
 $ swift build -c release -Xswiftc -static-stdlib
-$ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
+$ cp -f .build/release/vintage /usr/local/bin/vintage
  ```
  
 Using **[Mint](https://github.com/yonaskolb/mint)**:
 
 ```bash
-$ mint install vinhnx/package_outdated
+$ mint install vinhnx/vintage
 ```
 
 Using **[Marathon](https://github.com/JohnSundell/Marathon)**:
 
 ```bash
-$ marathon install vinhnx/package_outdated
+$ marathon install vinhnx/vintage
 ```
 
 #### On Linux
 
 ```bash
-$ git clone https://github.com/vinhnx/package_outdated.git
-$ cd package_outdated
+$ git clone https://github.com/vinhnx/vintage.git
+$ cd vintage
 $ swift build -c release
-$ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
+$ cp -f .build/release/vintage /usr/local/bin/vintage
 ```
 
-If you encounter a permissions failure while installing, you may need to prepend sudo to the commands. To update `package_outdated`, simply repeat any of the above two series of commands, except cloning the repo.
+If you encounter a permissions failure while installing, you may need to prepend sudo to the commands. To update `vintage`, simply repeat any of the above two series of commands, except cloning the repo.
 
 ## Usage
 
 Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
-$ package_outdated run
+$ vintage run
 ```
 
 Specifies path of Swift Package Manager directory to update:
 
 ```bash
-$ package_outdated run -p Dependencies
+$ vintage run -p Dependencies
 ```
 
 Help page:
 
 ```bash
-$ package_outdated --help
+$ vintage --help
 
 Usage:
 
-    $ package_outdated
+    $ vintage
 
 Commands:
 
@@ -93,11 +93,11 @@ Commands:
 Run with option:
 
 ```bash
-$ package_outdated run --help
+$ vintage run --help
 
 Usage:
 
-    $ package_outdated run
+    $ vintage run
 
 Options:
     --path [default: .] - Path to the folder contains Swift Package manifest file (Package.swift).

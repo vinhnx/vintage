@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "package_outdated",
     products: [
-        .executable(name: "package_outdated", targets: ["package_outdated"]),
+        .executable(name: "vintage", targets: ["package_outdated"]),
         .library(name: "package_outdated_core", targets: ["package_outdated_core"])
     ],
     dependencies: [

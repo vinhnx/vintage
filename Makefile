@@ -1,5 +1,5 @@
 PREFIX?=/usr/local
-INSTALL_NAME = package_outdated
+INSTALL_NAME = vintage
 
 install: build install_bin
 
