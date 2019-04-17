@@ -33,11 +33,12 @@ $ swift build -c release -Xswiftc -static-stdlib
 $ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
  ```
 
+<!-- 
 Using **[Mint](https://github.com/yonaskolb/mint)**:
 
 ```
 $ mint install vinhnx/package_outdated
-```
+``` -->
 
 ## Usage
 
