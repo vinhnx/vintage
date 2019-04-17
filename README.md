@@ -16,7 +16,7 @@ Currently, it will just output local dependency version and compare with latest 
 
 In the future, I will try to support local dependency path and attempt to mimic the like of Cocoapods and Carthage.
 
-This meant for personal educational purpose as I'm learning to write Swift scripting, but feel free to use in your project if you see fit. Pull PR is very welcome 😄 !
+This meant for personal educational purpose as I'm learning to write Swift scripting, but feel free to use in your project if you see fit. PRs is very welcome 😄 !
 
 ## Installation
 
