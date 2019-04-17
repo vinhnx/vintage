@@ -109,7 +109,7 @@ Options:
 + [Files](https://github.com/JohnSundell/Files)
 + [Releases](https://github.com/JohnSundell/Releases)
 + [Commander](https://github.com/kylef/Commander)
-+ [Rainbow](https://github.com/onevcat/Rainbow)
++ [Chalk](https://github.com/mxcl/Chalk)
 
 ## Reference
 
