@@ -15,14 +15,15 @@ let package = Package(
         .package(url: "git@github.com:JohnSundell/Files.git", from: "3.0.0"),
         .package(url: "git@github.com:JohnSundell/Releases.git", from: "2.0.0"),
         .package(url: "git@github.com:kylef/Commander.git", from: "0.8.0"),
-        .package(url: "https://github.com/mxcl/Chalk.git", from: "0.1.0")
+        .package(url: "https://github.com/mxcl/Chalk.git", from: "0.1.0"),
+        .package(url: "https://github.com/kiliankoe/CLISpinner", from: "0.3.6")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "package_outdated",
-            dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk"]
+            dependencies: ["Sweep", "Files", "Releases", "Commander", "Chalk", "CLISpinner"]
         ),
         .testTarget(
             name: "package_outdatedTests",

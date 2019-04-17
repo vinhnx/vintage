@@ -1,7 +1,8 @@
-import Commander
-import Files
 import Foundation
 import Chalk
+import CLISpinner
+import Commander
+import Files
 import Releases
 import Sweep
 
@@ -234,9 +235,12 @@ func execute(_ path: String = FileSystem().currentFolder.name) throws {
 func parse(_ substring: Substring, path: String) {
     do {
         let url = substring.gitURL
+        let spinner = Spinner(pattern: .dots)
+        spinner.start()
         let releases = try Releases.versions(for: url)
         let localVersion = try findVersionTagForPackage(substring.toString, path: path).toVersion
         outputPrint(url: url, releases: releases, localVersion: localVersion)
+        spinner.succeed()
     } catch {
         print(CommandError.rawError(error, #line))
     }
@@ -259,7 +263,7 @@ func colorCode(lhs: Version, rhs: Version) -> Color {
 ///   - releases: released versions
 ///   - localVersion: local version
 func outputPrint(url: URL, releases: [Version], localVersion: Version?) {
-    print("📦 checking " + "\(url.absoluteString, style: .bold)...")
+    print("📦 " + "\(url.absoluteString, style: .bold)")
     guard let latestVersion = (releases.last?.string ?? "").toVersion else { return }
 
     var color: Chalk.Color = .white

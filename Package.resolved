@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "CLISpinner",
+        "repositoryURL": "https://github.com/kiliankoe/CLISpinner",
+        "state": {
+          "branch": null,
+          "revision": "93ca0c508e2bfcfc65ef068f667b3f20c327158c",
+          "version": "0.3.6"
+        }
+      },
+      {
         "package": "Commander",
         "repositoryURL": "git@github.com:kylef/Commander.git",
         "state": {
@@ -26,6 +35,15 @@
           "branch": null,
           "revision": "92b57bea0e737e7d92b5ff281f46ec2b59faf91c",
           "version": "3.1.0"
+        }
+      },
+      {
+        "package": "Rainbow",
+        "repositoryURL": "https://github.com/onevcat/Rainbow",
+        "state": {
+          "branch": null,
+          "revision": "9c52c1952e9b2305d4507cf473392ac2d7c9b155",
+          "version": "3.1.5"
         }
       },
       {
