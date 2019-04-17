@@ -11,30 +11,7 @@ import Chalk
 import Releases
 import CLISpinner
 
-/// Find version tag for a given Package
-///
-/// - Parameters:
-///   - packageURL: package remote URL (TODO: handle local package)
-///   - path: path to the folder contains Swift Package manifest file (Package.swift).
-/// - Returns: version tag ofr the given Package dependency
-/// - Throws: error, if any throwing operations occurs
-public func findVersionTagForPackage(_ packageURL: String, path: String) throws -> String {
-    let folder = try Folder(path: path)
-    let file = try folder.file(atPath: PackageConstant.manifestResolvedFileName)
-    let content = try file.readAsString()
-
-    guard let data = content.data(using: .utf8) else {
-        throw CommandError.convertDataFromString
-    }
-
-    let result = try JSONDecoder().decode(RootState.self, from: data)
-    let package = result.object.pins.first { $0.repositoryURL == packageURL }
-    guard let unwrappedPackage = package else {
-        throw CommandError.noMatchedPackageRepositoryURLFound
-    }
-
-    return unwrappedPackage.state.version ?? ""
-}
+// MARK: - Public
 
 /// Execute parsing command
 ///
@@ -54,12 +31,39 @@ public func execute(_ path: String = FileSystem().currentFolder.name) throws {
     }
 }
 
+// MARK: - Private
+
+/// Find version tag for a given Package
+///
+/// - Parameters:
+///   - packageURL: package remote URL (TODO: handle local package)
+///   - path: path to the folder contains Swift Package manifest file (Package.swift).
+/// - Returns: version tag ofr the given Package dependency
+/// - Throws: error, if any throwing operations occurs
+func findVersionTagForPackage(_ packageURL: String, path: String) throws -> String {
+    let folder = try Folder(path: path)
+    let file = try folder.file(atPath: PackageConstant.manifestResolvedFileName)
+    let content = try file.readAsString()
+
+    guard let data = content.data(using: .utf8) else {
+        throw CommandError.convertDataFromString
+    }
+
+    let result = try JSONDecoder().decode(RootState.self, from: data)
+    let package = result.object.pins.first { $0.repositoryURL == packageURL }
+    guard let unwrappedPackage = package else {
+        throw CommandError.noMatchedPackageRepositoryURLFound
+    }
+
+    return unwrappedPackage.state.version ?? ""
+}
+
 /// Parse and output print from comparing versions
 ///
 /// - Parameters:
 ///   - substring: parsed substring
 ///   - path: path to the folder contains Swift Package manifest file (Package.swift).
-public func parse(_ substring: Substring, path: String) {
+func parse(_ substring: Substring, path: String) {
     do {
         let url = substring.gitURL
         let spinner = Spinner(pattern: .dots)
@@ -79,7 +83,7 @@ public func parse(_ substring: Substring, path: String) {
 ///   - lhs: left hand side version
 ///   - rhs: right hand side version
 /// - Returns: color code
-public func colorCode(lhs: Version, rhs: Version) -> Color {
+func colorCode(lhs: Version, rhs: Version) -> Color {
     return lhs == rhs ? .green : .red
 }
 
