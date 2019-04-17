@@ -20,6 +20,8 @@ This meant for personal educational purpose as I'm learning to write Swift scrip
 
 ## Installation
 
+#### On Mac
+
 Using **Make** (recommended):
 
 ```bash
@@ -43,6 +45,17 @@ Using **[Mint](https://github.com/yonaskolb/mint)**:
 ```
 $ mint install vinhnx/package_outdated
 ``` -->
+
+#### On Linux
+
+```bash
+$ git clone https://github.com/vinhnx/package_outdated.git
+$ cd package_outdated
+$ swift build -c release
+$ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
+```
+
+If you encounter a permissions failure while installing, you may need to prepend sudo to the commands. To update `package_outdated`, simply repeat any of the above two series of commands, except cloning the repo.
 
 ## Usage
 
@@ -97,8 +110,10 @@ Options:
 + [Swift Package Manager usage document](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md#create-a-package)
 + [git ls-remote](https://git-scm.com/docs/git-ls-remote.html)
 + [carthage outdated](https://github.com/Carthage/Carthage/blob/master/Source/carthage/Outdated.swift)
-+ I was heavily inspired by this awesome talk [John Sundell: Swift scripting in practice](https://www.youtube.com/watch?v=PFdh5G3BJqM) :rocket:
++ I was heavily inspired by these awesome talks:
+  + [Swift Scripting by Ayaka Nonaka](https://academy.realm.io/posts/swift-scripting/)
+  + [John Sundell: Swift scripting in practice](https://www.youtube.com/watch?v=PFdh5G3BJqM)
 
 ## Help, feedback or suggestions?
 
-Feel free to contact me on [Twitter](https://twitter.com/vinhnx) for discussions, news & announcements about Sugar & other projects.
+Feel free to contact me on [Twitter](https://twitter.com/vinhnx) for discussions, news & announcements about Sugar & other projects. :rocket:
