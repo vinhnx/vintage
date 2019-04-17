@@ -38,13 +38,18 @@ $ cd package_outdated
 $ swift build -c release -Xswiftc -static-stdlib
 $ cp -f .build/release/package_outdated /usr/local/bin/package_outdated
  ```
-
-<!-- 
+ 
 Using **[Mint](https://github.com/yonaskolb/mint)**:
 
-```
+```bash
 $ mint install vinhnx/package_outdated
-``` -->
+```
+
+Using **[Marathon](https://github.com/JohnSundell/Marathon)**:
+
+```bash
+$ marathon install vinhnx/package_outdated
+```
 
 #### On Linux
 
