@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Chalk",
+        "repositoryURL": "https://github.com/mxcl/Chalk.git",
+        "state": {
+          "branch": null,
+          "revision": "9aa9f348b86db3cf6702a3e43c081ecec80cf3c7",
+          "version": "0.4.0"
+        }
+      },
+      {
         "package": "Commander",
         "repositoryURL": "git@github.com:kylef/Commander.git",
         "state": {
@@ -17,15 +26,6 @@
           "branch": null,
           "revision": "92b57bea0e737e7d92b5ff281f46ec2b59faf91c",
           "version": "3.1.0"
-        }
-      },
-      {
-        "package": "Rainbow",
-        "repositoryURL": "git@github.com:onevcat/Rainbow.git",
-        "state": {
-          "branch": null,
-          "revision": "9c52c1952e9b2305d4507cf473392ac2d7c9b155",
-          "version": "3.1.5"
         }
       },
       {

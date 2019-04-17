@@ -1,7 +1,7 @@
 import Commander
 import Files
 import Foundation
-import Rainbow
+import Chalk
 import Releases
 import Sweep
 
@@ -175,7 +175,7 @@ extension CommandError {
     }
 
     var description: String {
-        return ("❗️ " + self.message + ", please try again.").applyingCodes(Color.lightRed, Style.italic)
+        return "❗️ \(self.message, color: .red)"
     }
 }
 
@@ -259,16 +259,16 @@ func colorCode(lhs: Version, rhs: Version) -> Color {
 ///   - releases: released versions
 ///   - localVersion: local version
 func outputPrint(url: URL, releases: [Version], localVersion: Version?) {
-    print("📦 checking " + "\(url.absoluteString)...".applyingCodes(Style.bold))
+    print("📦 checking " + "\(url.absoluteString, style: .bold)...")
     guard let latestVersion = (releases.last?.string ?? "").toVersion else { return }
 
-    var color: Color = .default
+    var color: Chalk.Color = .white
     localVersion.flatMap { local in
         color = colorCode(lhs: local, rhs: latestVersion)
-        print("> 🏷  local version: \(local)".applyingColor(color))
+        print("> 🏷  local version: \(local, color: color)")
     }
 
-    print("> ☁️  latest version: \(latestVersion)".applyingColor(color))
+    print("> ☁️  latest version: \(latestVersion, color: color)")
 }
 
 /**
