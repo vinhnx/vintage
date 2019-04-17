@@ -62,19 +62,20 @@ If you encounter a permissions failure while installing, you may need to prepend
 Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
-package_outdated run
+$ package_outdated run
 ```
 
 Specifies path of Swift Package Manager directory to update:
 
 ```bash
-package_outdated run -p Dependencies
+$ package_outdated run -p Dependencies
 ```
 
 Help page:
 
 ```bash
-package_outdated --help
+$ package_outdated --help
+
 Usage:
 
     $ package_outdated
@@ -87,7 +88,7 @@ Commands:
 Run with option:
 
 ```bash
-package_outdated run --help
+$ package_outdated run --help
 
 Usage:
 
