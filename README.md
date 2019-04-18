@@ -122,4 +122,4 @@ Options:
 
 ## Help, feedback or suggestions?
 
-Feel free to contact me on [Twitter](https://twitter.com/vinhnx) for discussions, news & announcements about Sugar & other projects. :rocket:
+Feel free to contact me on [Twitter](https://twitter.com/vinhnx) for discussions, news & announcements & other projects. :rocket:
