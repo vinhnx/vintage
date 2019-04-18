@@ -6,6 +6,10 @@
 
 **vintage** is a small command-line utility to check project's Swift Package Manager dependencies' local version with remote latest version. 
 
+📦 pseudo `swift package outdated` command. 
+
+Think `pod outdated` or `carthage outdated`, but for Swift Package Manager. 
+
 ![screenshot](screenshots/run_demo.png)
 
 ## Goals
