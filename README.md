@@ -31,7 +31,7 @@ Using **Make** (recommended):
 ```bash
 $ git clone https://github.com/vinhnx/vintage.git
 $ cd vintage
-$ make
+vintage$ make
 ```
 
 Using the **Swift Package Manager**:
@@ -39,8 +39,8 @@ Using the **Swift Package Manager**:
 ```bash
 $ git clone https://github.com/vinhnx/vintage.git
 $ cd vintage
-$ swift build -c release -Xswiftc -static-stdlib
-$ cp -f .build/release/vintage /usr/local/bin/vintage
+vintage$ swift build -c release -Xswiftc -static-stdlib
+vintage$ cp -f .build/release/vintage /usr/local/bin/vintage
  ```
  
 Using **[Mint](https://github.com/yonaskolb/mint)**:
@@ -60,8 +60,8 @@ $ marathon install vinhnx/vintage
 ```bash
 $ git clone https://github.com/vinhnx/vintage.git
 $ cd vintage
-$ swift build -c release
-$ cp -f .build/release/vintage /usr/local/bin/vintage
+vintage$ swift build -c release
+vintage$ cp -f .build/release/vintage /usr/local/bin/vintage
 ```
 
 If you encounter a permissions failure while installing, you may need to prepend sudo to the commands. To update `vintage`, simply repeat any of the above two series of commands, except cloning the repo.
