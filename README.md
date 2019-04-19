@@ -4,7 +4,7 @@
 [![Swift Package Manager](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager)
 [![@vinhnx](https://img.shields.io/badge/contact-%40vinhnx-blue.svg)](https://twitter.com/vinhnx)
 
-A a small tool to check outdated Swift Package Manager dependencies. 
+A small command-line tool to check outdated Swift Package Manager dependencies. 
 
 📦 pseudo `swift package outdated` command. 
 
