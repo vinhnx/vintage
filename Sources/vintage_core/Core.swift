@@ -10,36 +10,6 @@ import Files
 import Chalk
 import Releases
 
-/*
-version logic:
-
-
- .from: accept next major
-
- The following code specifies any version of the dependency, starting at 1.1.3 and less than 2.0.0:
-     .package(url: "https://github.com/...git", from: "1.1.3")
-
- ...: range
- If you want specify a minimum and maximum version for one dependency, you can use a range:
-     .package(url: "https://github.com/...git", "1.1.0" ... "1.2.1")
-
-     .exact: exactly
- Use the following if you’re interested in an exact version of a dependency:
-     .package(url: "https://github.com/...git", .exact("1.2.3"))
-
- All of these version - specific variations also support beta - versioning.For example:
-     .package(url: "https://github.com/...git", from: "1.1.3-beta.4")
-
-     .branch: git branch
- You can also lock the dependency to a specific branch in git.This is useful if a feature or fix is not yet released:
-     .package(url: "https://github.com/...git", .branch("bugfix/issue-121"))
-
-     .revision: hash
- Finally, you can specify a commit by its hash:
-     .package(url: "https://github.com/...git", .revision("04136e97a73b826528dd077c3ebab07d9f8f48e2"))
-
-*/
-
 // MARK: - Public
 
 /// Execute parsing command
