@@ -4,23 +4,13 @@
 [![Swift Package Manager](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager)
 [![@vinhnx](https://img.shields.io/badge/contact-%40vinhnx-blue.svg)](https://twitter.com/vinhnx)
 
-**vintage** is a small command-line utility to check project's Swift Package Manager dependencies' local version with remote latest version. 
+A a small tool to check outdated Swift Package Manager dependencies. 
 
 📦 pseudo `swift package outdated` command. 
 
 Think `pod outdated` or `carthage outdated`, but for Swift Package Manager. 
 
 ![screenshot](screenshots/run_demo.png)
-
-## Goals
-
-Like Cocoapods's `pod outdated` or Carthage's `carthage outdated`, but for Swift Package Manager.
-
-Currently, it will just output local dependency version and compare with latest git remote version. 
-
-In the future, I will try to support local dependency path and attempt to mimic the like of Cocoapods and Carthage.
-
-This meant for personal educational purpose as I'm learning to write Swift scripting, but feel free to use in your project if you see fit. PRs is very welcome 😄 !
 
 ## Installation
 
