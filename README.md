@@ -14,47 +14,46 @@ Think `pod outdated` or `carthage outdated`, but for Swift Package Manager.
 
 ## Installation
 
-#### On Mac
-
-Using **Make** (recommended):
+**[homebrew](https://brew.sh)**
 
 ```bash
-$ git clone https://github.com/vinhnx/vintage.git
-$ cd vintage
-vintage$ make
+$ brew tap vinhnx/homebrew-formulae
+$ brew install vintage
 ```
 
-Using the **Swift Package Manager**:
-
+or
 ```bash
-$ git clone https://github.com/vinhnx/vintage.git
-$ cd vintage
-vintage$ swift build -c release -Xswiftc -static-stdlib
-vintage$ cp -f .build/release/vintage /usr/local/bin/vintage
- ```
- 
-Using **[Mint](https://github.com/yonaskolb/mint)**:
+$ brew install vinhnx/homebrew-formulae/vintage
+```
+
+**[Mint](https://github.com/yonaskolb/mint)**
 
 ```bash
 $ mint install vinhnx/vintage
 ```
 
-Using **[Marathon](https://github.com/JohnSundell/Marathon)**:
+**[Marathon](https://github.com/JohnSundell/Marathon)**
 
 ```bash
 $ marathon install vinhnx/vintage
 ```
 
-#### On Linux
+**Make**
 
 ```bash
 $ git clone https://github.com/vinhnx/vintage.git
 $ cd vintage
-vintage$ swift build -c release
-vintage$ cp -f .build/release/vintage /usr/local/bin/vintage
+$ make
 ```
 
-If you encounter a permissions failure while installing, you may need to prepend sudo to the commands. To update `vintage`, simply repeat any of the above two series of commands, except cloning the repo.
+**Swift Package Manager**
+
+```bash
+$ git clone https://github.com/vinhnx/vintage.git
+$ cd vintage
+$ swift build -c release
+$ cp -f .build/release/vintage /usr/local/bin/vintage
+ ```
 
 ## Usage
 
