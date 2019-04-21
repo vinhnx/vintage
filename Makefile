@@ -9,7 +9,6 @@ build:
 
 install_bin:
 	mkdir -p $(PREFIX)/bin
-	mv .build/Release/vintage .build/Release/$(INSTALL_NAME)
 	install .build/Release/$(INSTALL_NAME) $(PREFIX)/bin
 
 uninstall:
