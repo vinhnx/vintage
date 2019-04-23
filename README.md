@@ -10,7 +10,13 @@ A small command-line tool to check outdated Swift Package Manager dependencies.
 
 Think `pod outdated` or `carthage outdated`, but for Swift Package Manager. 
 
+### Screenshot
+
 ![screenshot](screenshots/run_demo.png)
+
+### Asciinema
+
+[![asciicast](https://asciinema.org/a/R8eSPvZy7kkfDr9YiDR4aj5NU.svg)](https://asciinema.org/a/R8eSPvZy7kkfDr9YiDR4aj5NU)
 
 ## Installation
 
