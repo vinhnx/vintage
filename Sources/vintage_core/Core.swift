@@ -5,9 +5,9 @@
 //  Created by Vinh Nguyen on 17/4/19.
 //
 
-import Foundation
-import Files
 import Chalk
+import Files
+import Foundation
 import Releases
 
 // MARK: - Public
@@ -18,16 +18,22 @@ import Releases
 /// - Throws: error, if any throwing operations occurs
 public func execute(_ path: String = FileSystem().currentFolder.name) throws {
     let folder = try Folder(path: path)
-    let packageFile = folder.files.first { $0.name == PackageConstant.manifestFileName }
-    guard let packageManifest = packageFile else {
-        throw CommandError.noPackageManifestFileFound(path)
+
+    let packageResolveFile = try File(path: PackageConstant.manifestResolvedFileName)
+    guard folder.contains(packageResolveFile) else {
+        throw CommandError.noPackageFileFound(at: path)
     }
 
-    try packageManifest
+    let packageManifestFile = try File(path: PackageConstant.manifestFileName)
+    guard folder.contains(packageManifestFile) else {
+        throw CommandError.noPackageFileFound(at: path)
+    }
+
+    try packageManifestFile
         .trimmedWhiteSpacesContent()
         .scanPackageURL { substring in
             parse(substring, path: path)
-    }
+        }
 }
 
 // MARK: - Private
@@ -43,7 +49,6 @@ func findVersionTagForPackage(_ packageURL: String, path: String) throws -> Stri
     let folder = try Folder(path: path)
     let file = try folder.file(atPath: PackageConstant.manifestResolvedFileName)
     let content = try file.readAsString()
-
     guard let data = content.data(using: .utf8) else {
         throw CommandError.convertDataFromString
     }
@@ -68,8 +73,8 @@ func parse(_ substring: Substring, path: String) {
         let releases = try Releases.versions(for: url)
         let localVersion = try findVersionTagForPackage(substring.toString, path: path).toVersion
         outputPrint(url: url, releases: releases, localVersion: localVersion)
-    } catch {
-        print(CommandError.rawError(error, #line))
+    } catch let error as CustomStringConvertible {
+        print(CommandError.rawError(error))
     }
 }
 

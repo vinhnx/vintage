@@ -1,26 +1,18 @@
 import Commander
 import vintage_core
 
-// NOTE: check TODO.md in root folder for TODOs
 /*
- ### Goal
- + create an command-line utilities in Swift (mostly to learn-by-doing)
- + to find outdated package
- + if so, just print out
- + think `pod outdated` but for SPM
- + read `swift package update` manual
-
  ### TODO
- + check if resolved package file exists (Package.resolve), if not run `swift package resolve`
  + write tests
  + documents
  + [plan] handle .package's path
  /// Add a dependency to a local package on the filesystem.
  public static func package(path: String) -> PackageDescription.Package.Dependency
  + [plan] checkout checkouts-state.json > build dependencies graph > check outdated sub-dependencies too!")
- + [plan] choose a better name
 
  ### Done
+ + [done] [plan] choose a better name
+ + [done] check if resolved package file exists (Package.resolve), if not run `swift package resolve`
  + [done] modularize
  + [done] mint/brew/installation publish
  + [done] using Files and Sweep, https://github.com/JohnSundell/Releases

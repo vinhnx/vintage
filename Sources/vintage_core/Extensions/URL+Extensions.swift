@@ -22,8 +22,8 @@ public extension URL {
 
         do {
             return try Releases.versions(for: self)
-        } catch {
-            print(CommandError.rawError(error, #line))
+        } catch let error as CustomStringConvertible {
+            print(CommandError.rawError(error))
             return []
         }
     }

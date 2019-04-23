@@ -5,16 +5,16 @@
 //  Created by Vinh Nguyen on 17/4/19.
 //
 
-import Foundation
 import Chalk
+import Foundation
 
 public enum CommandError: Error, CustomStringConvertible {
     case convertDataFromString
     case decoder
     case noMatchedPackageRepositoryURLFound
-    case noPackageManifestFileFound(String)
+    case noPackageFileFound(at: String)
     case invalidURL(URL)
-    case rawError(Error, Int)
+    case rawError(CustomStringConvertible)
 }
 
 extension CommandError {
@@ -26,12 +26,12 @@ extension CommandError {
             return "Failed to decode JSON from data"
         case .noMatchedPackageRepositoryURLFound:
             return "No matched package repository URL found"
-        case .noPackageManifestFileFound(let path):
-            return "No package manifest file found in current path: `\(path)`. Try running with `-p` option, example: `package_outdated run -p Dependencies`"
+        case .noPackageFileFound(let path):
+            return "No package file found in current path: `\(path)`. Try running with `--help` option"
         case .invalidURL(let url):
             return "URL is not a valid URL. Expected: https, git. Got: \(url.scheme ?? "")"
-        case .rawError(let error, let line):
-            return "[Error line #\(line)] \(error.localizedDescription)"
+        case .rawError(let error):
+            return "[Error] \(error.description)"
         }
     }
 
