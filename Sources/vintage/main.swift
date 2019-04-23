@@ -6,8 +6,10 @@ import vintage_core
  + write tests
  + documents
  + [plan] handle .package's path
- /// Add a dependency to a local package on the filesystem.
- public static func package(path: String) -> PackageDescription.Package.Dependency
+ extension Package.Dependency {
+    /// Add a dependency to a local package on the filesystem.
+    public static func package(path: String) -> PackageDescription.Package.Dependency
+ }
  + [plan] checkout checkouts-state.json > build dependencies graph > check outdated sub-dependencies too!")
 
  ### Done
