@@ -7,11 +7,11 @@ import vintage_core
  + documents
  + [plan] handle .package's path
  extension Package.Dependency {
-    /// Add a dependency to a local package on the filesystem.
-    public static func package(path: String) -> PackageDescription.Package.Dependency
+ /// Add a dependency to a local package on the filesystem.
+ public static func package(path: String) -> PackageDescription.Package.Dependency
  }
  + [plan] checkout checkouts-state.json > build dependencies graph > check outdated sub-dependencies too!")
-
+ 
  ### Done
  + [done] [plan] choose a better name
  + [done] check if resolved package file exists (Package.resolve), if not run `swift package resolve`
@@ -20,7 +20,7 @@ import vintage_core
  + [done] using Files and Sweep, https://github.com/JohnSundell/Releases
  + [done] plan: color output
  + [done] IMPORTANT: handle `throws` error
-
+ 
  */
 
 let pathOption = Option("path",

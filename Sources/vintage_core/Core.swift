@@ -16,39 +16,51 @@ import Releases
 ///
 /// - Parameter path: path to the folder contains Swift Package manifest file (Package.swift).
 /// - Throws: error, if any throwing operations occurs
-public func execute(_ path: String = FileSystem().currentFolder.name) throws {
-    let folder = try Folder(path: path)
+public func execute(_ path: String) throws {
+    // IMPORTANT: first, we check for "Package.swift" (if no package manifest file found,
+    // meaning this is not a Swift package manager)
+    let manifestFile = try file(path, name: PackageConstant.manifestFileName)
+    try scan(manifestFile, path: path)
+}
 
-    let packageResolveFile = try File(path: PackageConstant.manifestResolvedFileName)
-    guard folder.contains(packageResolveFile) else {
-        throw CommandError.noPackageFileFound(at: path)
-    }
+// MARK: - Private
 
-    let packageManifestFile = try File(path: PackageConstant.manifestFileName)
-    guard folder.contains(packageManifestFile) else {
-        throw CommandError.noPackageFileFound(at: path)
-    }
-
-    try packageManifestFile
+func scan(_ manifestFile: File, path: String) throws {
+    try manifestFile
         .trimmedWhiteSpacesContent()
         .scanPackageURL { substring in
             parse(substring, path: path)
         }
 }
 
-// MARK: - Private
+/// Return file name at a given path
+///
+/// - Parameters:
+///   - path: path to find File
+///   - name: the name of the File to search
+/// - Returns: file at a given path
+/// - Throws: error, if any throwing operations occurs
+@discardableResult
+func file(_ path: String, name: String) throws -> File {
+    let folder = try Folder(path: path)
+    let file = try File(path: path.appending("/\(name)"))
+    guard folder.contains(file) else {
+        throw CommandError.noPackageFileFound(at: path)
+    }
+
+    return file
+}
 
 /// Find version tag for a given Package
 ///
 /// - Parameters:
 ///   - packageURL: package remote URL (TODO: handle local package)
-///   - path: path to the folder contains Swift Package manifest file (Package.swift).
-/// - Returns: version tag ofr the given Package dependency
+///   - path: path to the folder contains Swift Package manifest resolve file (Package.resolve).
+/// - Returns: version tag for the given Package dependency
 /// - Throws: error, if any throwing operations occurs
 func findVersionTagForPackage(_ packageURL: String, path: String) throws -> String {
-    let folder = try Folder(path: path)
-    let file = try folder.file(atPath: PackageConstant.manifestResolvedFileName)
-    let content = try file.readAsString()
+    let packageResolveFile = try file(path, name: PackageConstant.manifestResolvedFileName)
+    let content = try packageResolveFile.readAsString()
     guard let data = content.data(using: .utf8) else {
         throw CommandError.convertDataFromString
     }

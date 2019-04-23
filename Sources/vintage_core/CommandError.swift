@@ -34,7 +34,7 @@ extension CommandError {
             return "[Error] \(error.description)"
         }
     }
-
+    
     public var description: String {
         return "❗️ \(self.message, color: .red)"
     }
