@@ -3,8 +3,6 @@ import vintage_core
 
 /*
  ### TODO
- + write tests
- + documents
  + [plan] handle .package's path
  extension Package.Dependency {
  /// Add a dependency to a local package on the filesystem.
