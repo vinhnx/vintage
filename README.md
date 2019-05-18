@@ -84,6 +84,18 @@ Commands:
 
 ```
 
+## Related projects
+
+If you like this tool, checkout my [spawn](https://github.com/vinhnx/spawn), it's a tool to generate and/or update Swift packages and open a Xcode project for you.
+
+Combo:
+
+```bash
+$ vintage && spawn # vintage: check for any outdated packages, spawn: generate and update packages for you
+```
+
+I hope you like it! :)
+
 ## Dependencies
 
 + [Sweep](https://github.com/JohnSundell/Sweep)
