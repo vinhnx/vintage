@@ -12,6 +12,35 @@ Think `pod outdated` or `carthage outdated`, but for Swift Package Manager.
 
 ![demo](screenshots/run_demo.png)
  
+## Usage
+
+Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
+
+```bash
+$ vintage
+```
+
+Specifies path of Swift Package Manager directory to update:
+
+```bash
+$ vintage -p Dependencies
+```
+
+Help page:
+
+```bash
+$ vintage --help
+
+Usage:
+
+    $ vintage
+
+Commands:
+
+    + run - Check project's Package dependencies' local version with remote latest version.
+
+```
+
 ## Installation
 
 **[homebrew](https://brew.sh)**
@@ -54,35 +83,6 @@ $ cd vintage
 $ swift build -c release
 $ cp -f .build/release/vintage /usr/local/bin/vintage
  ```
-
-## Usage
-
-Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
-
-```bash
-$ vintage
-```
-
-Specifies path of Swift Package Manager directory to update:
-
-```bash
-$ vintage -p Dependencies
-```
-
-Help page:
-
-```bash
-$ vintage --help
-
-Usage:
-
-    $ vintage
-
-Commands:
-
-    + run - Check project's Package dependencies' local version with remote latest version.
-
-```
 
 ## Related projects
 
