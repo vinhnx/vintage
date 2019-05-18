@@ -60,13 +60,13 @@ $ cp -f .build/release/vintage /usr/local/bin/vintage
 Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
-$ vintage run
+$ vintage
 ```
 
 Specifies path of Swift Package Manager directory to update:
 
 ```bash
-$ vintage run -p Dependencies
+$ vintage -p Dependencies
 ```
 
 Help page:
@@ -81,19 +81,7 @@ Usage:
 Commands:
 
     + run - Check project's Package dependencies' local version with remote latest version.
-```
 
-Run with option:
-
-```bash
-$ vintage run --help
-
-Usage:
-
-    $ vintage run
-
-Options:
-    --path [default: .] - Path to the folder contains Swift Package manifest file (Package.swift).
 ```
 
 ## Dependencies
