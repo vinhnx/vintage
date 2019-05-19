@@ -93,11 +93,22 @@ func parse(_ substring: Substring, path: String) {
 /// Color code from comparing version
 ///
 /// - Parameters:
-///   - lhs: left hand side version
-///   - rhs: right hand side version
+///   - localVersion: local version
+///   - remoteVersion: remote version
 /// - Returns: color code
-func colorCode(lhs: Version, rhs: Version) -> Color {
-    return lhs == rhs ? .green : .red
+func colorCode(localVersion: Version, remoteVersion: Version) -> Color {
+    let color: Color
+    let versionComparisionResult = localVersion.string.compare(remoteVersion.string,
+                                                               options: .numeric)
+
+    switch versionComparisionResult {
+    case .orderedSame,
+         .orderedDescending: // local version can not be higher than remote version
+        color = .white
+    case .orderedAscending: color = .red
+    }
+
+    return color
 }
 
 /// Output print to terminal
@@ -112,7 +123,7 @@ func outputPrint(url: URL, releases: [Version], localVersion: Version?) {
 
     var color: Chalk.Color = .white
     localVersion.flatMap { local in
-        color = colorCode(lhs: local, rhs: latestVersion)
+        color = colorCode(localVersion: local, remoteVersion: latestVersion)
         print("> 🏷  local version: \(local, color: color)")
     }
 
