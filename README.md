@@ -17,7 +17,7 @@ Think `pod outdated` or `carthage outdated`, but for Swift Package Manager.
 Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
-$ vintage
+$ vintage run
 ```
 
 Specifies path of Swift Package Manager directory to update:
@@ -42,6 +42,14 @@ Commands:
 ```
 
 ## Installation
+
+🆕 **[swiftbrew](https://github.com/swiftbrew/Swiftbrew)**
+
+"A package manager that installs prebuilt Swift command line tool packages, or Homebrew for Swift packages."
+
+```
+$ swift brew install vinhnx/spawn
+```
 
 **[homebrew](https://brew.sh)**
 
