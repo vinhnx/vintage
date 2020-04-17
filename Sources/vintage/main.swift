@@ -1,4 +1,4 @@
-import Commander
+import ArgumentParser
 import vintage_core
 
 /*
@@ -21,6 +21,14 @@ import vintage_core
 
  */
 
-let pathOption = Option("path", default: ".", flag: "p",
-                        description: "Path to the folder contains Swift Package manifest file (Package.swift).")
-command(pathOption) { try execute($0) }.run()
+struct Vintage: ParsableCommand {
+    @Option(
+        name: .shortAndLong,
+        default: ".",
+        help: "Path to the folder contains Swift Package manifest file (Package.swift)."
+    ) var path: String
+
+    func run() throws { try execute(path) }
+}
+
+Vintage.main()

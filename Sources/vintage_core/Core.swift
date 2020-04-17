@@ -105,7 +105,8 @@ func colorCode(localVersion: Version, remoteVersion: Version) -> Color {
     case .orderedSame,
          .orderedDescending: // local version can not be higher than remote version
         color = .white
-    case .orderedAscending: color = .red
+    case .orderedAscending:
+        color = .red
     }
 
     return color
