@@ -3,6 +3,10 @@ import vintage_core
 
 /*
  ### TODO
+ + offer to update deps if needed
+ + spawn integration
+ + check out https://github.com/kiliankoe/swift-outdated
+ + popularize this (submit to ios newsletter/weekly...)
  + [plan] handle .package's path
  extension Package.Dependency {
  /// Add a dependency to a local package on the filesystem.
