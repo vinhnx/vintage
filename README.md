@@ -115,7 +115,6 @@ I hope you like it! :)
 + [Sweep](https://github.com/JohnSundell/Sweep)
 + [Files](https://github.com/JohnSundell/Files)
 + [Releases](https://github.com/JohnSundell/Releases)
-+ [Commander](https://github.com/kylef/Commander)
 + [Chalk](https://github.com/mxcl/Chalk)
 
 ## Reference
@@ -126,6 +125,10 @@ I hope you like it! :)
 + I was heavily inspired by these awesome talks:
   + [Swift Scripting by Ayaka Nonaka](https://academy.realm.io/posts/swift-scripting/)
   + [John Sundell: Swift scripting in practice](https://www.youtube.com/watch?v=PFdh5G3BJqM)
+
+## swift-outdated
+
+Check out https://github.com/kiliankoe/swift-outdated for similiar approach to checking outdated depedencies.
 
 ## Help, feedback or suggestions?
 
