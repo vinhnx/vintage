@@ -17,28 +17,24 @@ Think `pod outdated` or `carthage outdated`, but for Swift Package Manager.
 Without any specifications (have to be executed in the directory where [Swift Package Manager manifest file (Package.swift)](https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md) is located):
 
 ```bash
-$ vintage run
+$ vintage
 ```
 
 Specifies path of Swift Package Manager directory to update:
 
 ```bash
-$ vintage -p Dependencies
+$ vintage -p path/to/dependencies
 ```
 
 Help page:
 
 ```bash
 $ vintage --help
+USAGE: vintage [--path <path>]
 
-Usage:
-
-    $ vintage
-
-Commands:
-
-    + run - Check project's Package dependencies' local version with remote latest version.
-
+OPTIONS:
+  -p, --path <path>       Path to the folder contains Swift Package manifest file (Package.swift). (default: .)
+  -h, --help              Show help information.
 ```
 
 ## Installation
