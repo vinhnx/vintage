@@ -55,7 +55,13 @@ $ swift brew install vinhnx/spawn
 
 ```bash
 $ brew tap vinhnx/homebrew-formulae
-$ brew install vintage
+$ brew install vinhnx/formulae/vintage
+```
+
+to upgrade existing vintage executable
+
+```bash
+$ brew upgrade vinhnx/formulae/vintage
 ```
 
 or
