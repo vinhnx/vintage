@@ -26,5 +26,6 @@ let package = Package(
                     "Chalk",
                     "ArgumentParser"
         ], path: "Sources/vintage_core")
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
