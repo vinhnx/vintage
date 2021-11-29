@@ -44,7 +44,7 @@ OPTIONS:
 "A package manager that installs prebuilt Swift command line tool packages, or Homebrew for Swift packages."
 
 ```
-$ swift brew install vinhnx/spawn
+$ swift brew install vinhnx/vintage
 ```
 
 **[homebrew](https://brew.sh)**
